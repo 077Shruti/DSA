@@ -28,6 +28,7 @@ public class linkedlist {
             }
         
     }
+    //Insertion
     public void InsertAtFirst(int val){
         Node NN=new Node(val);
         NN.next=head;
@@ -75,5 +76,57 @@ public class linkedlist {
 
         size++;
     }
+
+    //Deletion
+    public int DeletetAtFirst(){
+        int val=head.val;
+        head=head.next;
+        if(head==null) tail=null;
+        size--;
+        return val;
+
+    }
+
+    public Node get(int index){
+        Node temp=head;
+        for(int i=0;i<index;i++){
+            temp=temp.next;
+        }
+        return temp;
+    }
+
+    public int DeletetAtLast(){
+        if(size<=1){
+             return DeletetAtFirst();
+           
+        }
+        Node SecondLastNode=get(size-2);
+        int val=tail.val;
+        tail=SecondLastNode;
+        tail.next=null;
+        return val;
+
+    }
+     public int DeletetAtIndex(int index){
+        if(index==0) return DeletetAtFirst();
+
+        if(index==size-1) return DeletetAtLast();
+
+        Node prev=get(index-1);
+        int val=prev.next.val;
+        prev.next=prev.next.next;
+        return val;
+     }
+
+     public Node findNode(int value){
+        Node temp=head;
+        while(temp!=null){
+            if(temp.val==value){
+                return temp;
+            }
+            temp=temp.next;
+        }
+        return null;
+     }
     
 }

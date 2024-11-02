@@ -5,13 +5,20 @@ public class Main {
         LL.InsertAtFirst(6);
         LL.InsertAtFirst(5);
         LL.InsertAtFirst(4);
-        // LL.display();
+         LL.display();
         LL.insterAtLast(3);
         LL.insterAtLast(4);
         LL.insterAtLast(5);
         LL.insterAtLast(6);
         LL.insertAtIndex(27, 3);
         LL.display();
+        LL.DeletetAtFirst();
+        LL.display();
+        LL.DeletetAtLast();
+        LL.display();
+        LL.DeletetAtIndex(3);
+        LL.display();
+        System.out.println(LL.findNode(3));
     }
     
 }
